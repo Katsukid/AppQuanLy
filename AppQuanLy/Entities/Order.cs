@@ -6,7 +6,7 @@ namespace AppQuanLy.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Order
+    public  class Order
     {
         public long ID { get; set; }
 

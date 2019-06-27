@@ -6,49 +6,55 @@ namespace AppQuanLy.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Book
+    public  class Book
     {
-        public long ID { get; set; }
+          public long ID { get; set; }
 
-        [StringLength(50)]
-        public string Code { get; set; }
+          [StringLength(50)]
+          public string Code { get; set; }
 
-        [StringLength(250)]
-        public string Name { get; set; }
+          [StringLength(250)]
+          public string Name { get; set; }
 
-        public int? Author { get; set; }
+          public int? Author { get; set; }
 
-        public int? Publisher { get; set; }
-        
-        public int? Released { get; set; }
+          public int? Released { get; set; }
 
-        public int? NumberPage { get; set; }
+          public int? Publisher { get; set; }
 
-        public int? Weight { get; set; }
+          public int? NumberPage { get; set; }
 
-        [StringLength(20)]
-        public string Form { get; set; }
+          public int? Weight { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime? PublishDate { get; set; }
+          [StringLength(20)]
+          public string Form { get; set; }
 
-        public int? Buys { get; set; }
+          [Column(TypeName = "date")]
+          public DateTime? PublishDate { get; set; }
 
-        public decimal? Price { get; set; }
+          public int? Buys { get; set; }
 
-        public decimal? PromotionPrice { get; set; }
+          public decimal? Price { get; set; }
 
-        public long? CategoryID { get; set; }
+          public decimal? PromotionPrice { get; set; }
 
-        public int? ViewCount { get; set; }
+          public long? CategoryID { get; set; }
 
-        public decimal? Inventory { get; set; }
+          public int? ViewCount { get; set; }
 
-        public bool? Status { get; set; }
+          public int? Inventory { get; set; }
 
-        public string Description { get; set; }
+          public bool? Status { get; set; }
 
-        public DateTime? CreateDate { get; set; }
+          [StringLength(250)]
+          public string Image { get; set; }
 
-    }
+          public string Description { get; set; }
+
+          public DateTime? ModifiedDate { get; set; }
+
+          [StringLength(50)]
+          public string ModifiedBy { get; set; }
+
+     }
 }

@@ -6,7 +6,7 @@ namespace AppQuanLy.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class News
+    public  class News
     {
           public long ID { get; set; }
 

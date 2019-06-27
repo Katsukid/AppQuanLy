@@ -7,7 +7,7 @@ namespace AppQuanLy.Entities
     using System.Data.Entity.Spatial;
 
     [Table("ShippingType")]
-    public partial class ShippingType
+    public  class ShippingType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ShippingType()

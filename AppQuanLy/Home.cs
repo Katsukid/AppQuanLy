@@ -33,14 +33,6 @@ namespace AppQuanLy
                layctrlHome.Controls.Add(bUC);
           }
 
-          private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-          {
-               AuthorTypeUC atUC = new AuthorTypeUC();
-               atUC.Dock = DockStyle.Fill;
-               layctrlHome.Controls.Clear();
-               layctrlHome.Controls.Add(atUC);
-          }
-
           private void barBtnAuthor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
           {
                AuthorUC aUC = new AuthorUC();
@@ -49,12 +41,5 @@ namespace AppQuanLy
                layctrlHome.Controls.Add(aUC);
           }
 
-          private void barBtnImage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-          {
-               ImageUC aUC = new ImageUC();
-               aUC.Dock = DockStyle.Fill;
-               layctrlHome.Controls.Clear();
-               layctrlHome.Controls.Add(aUC);
-          }
      }
 }

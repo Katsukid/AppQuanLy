@@ -1,6 +1,6 @@
 ﻿namespace AppQuanLy.GUI
 {
-     partial class AuthorUC
+      class AuthorUC
      {
           /// <summary> 
           /// Required designer variable.

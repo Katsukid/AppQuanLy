@@ -50,7 +50,6 @@
                this.barBtnLogout = new DevExpress.XtraBars.BarButtonItem();
                this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
                this.barBtnContact = new DevExpress.XtraBars.BarButtonItem();
-               this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
                this.ribPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
                this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
                this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -96,8 +95,7 @@
             this.barBtnLogin,
             this.barBtnLogout,
             this.barButtonItem18,
-            this.barBtnContact,
-            this.barButtonItem1});
+            this.barBtnContact});
                this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
                this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
                this.ribbonControl1.MaxItemId = 2;
@@ -160,15 +158,7 @@
                this.barBtnAuthor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnAuthor.ImageOptions.LargeImage")));
                this.barBtnAuthor.Name = "barBtnAuthor";
                this.barBtnAuthor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnAuthor_ItemClick);
-               // 
-               // barBtnImage
-               // 
-               this.barBtnImage.Caption = "Image";
-               this.barBtnImage.Id = 11;
-               this.barBtnImage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnImage.ImageOptions.Image")));
-               this.barBtnImage.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnImage.ImageOptions.LargeImage")));
-               this.barBtnImage.Name = "barBtnImage";
-               this.barBtnImage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnImage_ItemClick);
+
                // 
                // barBtnCategory
                // 
@@ -274,15 +264,6 @@
                this.barBtnContact.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnContact.ImageOptions.LargeImage")));
                this.barBtnContact.Name = "barBtnContact";
                // 
-               // barButtonItem1
-               // 
-               this.barButtonItem1.Caption = "AuthorType";
-               this.barButtonItem1.Id = 1;
-               this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-               this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-               this.barButtonItem1.Name = "barButtonItem1";
-               this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-               // 
                // ribPageHome
                // 
                this.ribPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -340,14 +321,12 @@
                this.ribbonPageGroup2.ItemLinks.Add(this.barBtnBooks);
                this.ribbonPageGroup2.ItemLinks.Add(this.barBtnCategory);
                this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPublisher);
-               this.ribbonPageGroup2.ItemLinks.Add(this.barBtnImage);
                this.ribbonPageGroup2.Name = "ribbonPageGroup2";
                this.ribbonPageGroup2.Text = "Manage Books Infor";
                // 
                // ribbonPageGroup9
                // 
                this.ribbonPageGroup9.ItemLinks.Add(this.barBtnAuthor);
-               this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem1);
                this.ribbonPageGroup9.Name = "ribbonPageGroup9";
                this.ribbonPageGroup9.Text = "ribbonPageGroup9";
                // 
@@ -469,7 +448,6 @@
           private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
           private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
           private DevExpress.XtraLayout.LayoutControl layctrlHome;
-          private DevExpress.XtraBars.BarButtonItem barButtonItem1;
           private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
      }
 }

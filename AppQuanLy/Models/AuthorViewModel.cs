@@ -10,14 +10,13 @@ namespace AppQuanLy.Models
           public string Type { get; set; }
           public int numberBooks { get; set; }
           public AuthorViewModel() { }
-          public AuthorViewModel(Author a,AuthorType b) {
+          public AuthorViewModel(Author a) {
                this.ID = a.ID;
                this.Name = a.Name;
                this.Image = a.Image;
                this.AuthorType = a.AuthorType;
                this.DateOfBirth = a.DateOfBirth;
                this.Description = a.Description;
-               this.Type = b.Name;
           }
           // Ep kieu sang Model
           public Author toEntity()

@@ -6,7 +6,7 @@ namespace AppQuanLy.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Role
+    public  class Role
     {
         [StringLength(50)]
         public string ID { get; set; }

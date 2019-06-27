@@ -18,8 +18,8 @@ namespace AppQuanLy.Entities
 
         public string Description { get; set; }
 
-        public long? Image { get; set; }
+        public string Image { get; set; }
 
-        public int? AuthorType { get; set; }
+        public string AuthorType { get; set; }
     }
 }

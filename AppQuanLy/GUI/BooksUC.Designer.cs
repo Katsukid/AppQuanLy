@@ -32,35 +32,16 @@
                this.gridctrlBook = new DevExpress.XtraGrid.GridControl();
                this.bookViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
                this.gridviewBook = new DevExpress.XtraGrid.Views.Grid.GridView();
-               this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colAuthor = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colAuthorID = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colReleased = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colReleasedID = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colPublisher = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colPublisherID = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colNumberPage = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colWeight = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colForm = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colPublishDate = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colBuys = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colPromotionPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colCategoryID = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colViewCount = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colLikeCount = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colInventory = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
-               this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
                this.label6 = new System.Windows.Forms.Label();
                this.txtbCode = new System.Windows.Forms.TextBox();
                this.txtboxName = new System.Windows.Forms.TextBox();
                this.cmbboxAuthor = new System.Windows.Forms.ComboBox();
+               this.authorViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
                this.cmbboxRealeased = new System.Windows.Forms.ComboBox();
+               this.publisherBindingSource = new System.Windows.Forms.BindingSource(this.components);
                this.cmbboxPublisher = new System.Windows.Forms.ComboBox();
                this.cmbboxCategory = new System.Windows.Forms.ComboBox();
+               this.bookCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
                this.txtbNumberPage = new System.Windows.Forms.TextBox();
                this.txtbWeight = new System.Windows.Forms.TextBox();
                this.txtbPrice = new System.Windows.Forms.TextBox();
@@ -82,10 +63,38 @@
                this.btnSave = new System.Windows.Forms.Button();
                this.btnDelete = new System.Windows.Forms.Button();
                this.picboxImage = new System.Windows.Forms.PictureBox();
-               this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colAuthor = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colAuthorID = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colReleased = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colReleasedID = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colPublisher = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colPublisherID = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colNumberPage = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colWeight = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colForm = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colPublishDate = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colBuys = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colPromotionPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colCategory = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colCategoryID = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colViewCount = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colLikeCount = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colInventory = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colImage = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colModifiedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+               this.colModifiedBy = new DevExpress.XtraGrid.Columns.GridColumn();
                ((System.ComponentModel.ISupportInitialize)(this.gridctrlBook)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.bookViewModelBindingSource)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.gridviewBook)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.authorViewModelBindingSource)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.publisherBindingSource)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.bookCategoryBindingSource)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
                this.SuspendLayout();
                // 
@@ -108,6 +117,7 @@
                // gridviewBook
                // 
                this.gridviewBook.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
             this.colCode,
             this.colName,
             this.colAuthor,
@@ -123,6 +133,7 @@
             this.colBuys,
             this.colPrice,
             this.colPromotionPrice,
+            this.colCategory,
             this.colCategoryID,
             this.colViewCount,
             this.colLikeCount,
@@ -130,180 +141,13 @@
             this.colStatus,
             this.colImage,
             this.colDescription,
-            this.gridColumn1});
+            this.colModifiedDate,
+            this.colModifiedBy});
                this.gridviewBook.GridControl = this.gridctrlBook;
                this.gridviewBook.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
                this.gridviewBook.Name = "gridviewBook";
                this.gridviewBook.OptionsView.ColumnAutoWidth = false;
                this.gridviewBook.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridviewBook_ForcusedRowChanged);
-               // 
-               // colCode
-               // 
-               this.colCode.FieldName = "Code";
-               this.colCode.Name = "colCode";
-               this.colCode.Visible = true;
-               this.colCode.VisibleIndex = 0;
-               this.colCode.Width = 67;
-               // 
-               // colName
-               // 
-               this.colName.FieldName = "Name";
-               this.colName.Name = "colName";
-               this.colName.Visible = true;
-               this.colName.VisibleIndex = 1;
-               this.colName.Width = 110;
-               // 
-               // colAuthor
-               // 
-               this.colAuthor.FieldName = "Author";
-               this.colAuthor.Name = "colAuthor";
-               this.colAuthor.Visible = true;
-               this.colAuthor.VisibleIndex = 2;
-               this.colAuthor.Width = 110;
-               // 
-               // colAuthorID
-               // 
-               this.colAuthorID.FieldName = "AuthorID";
-               this.colAuthorID.Name = "colAuthorID";
-               this.colAuthorID.Width = 83;
-               // 
-               // colReleased
-               // 
-               this.colReleased.FieldName = "Released";
-               this.colReleased.Name = "colReleased";
-               this.colReleased.Visible = true;
-               this.colReleased.VisibleIndex = 3;
-               this.colReleased.Width = 106;
-               // 
-               // colReleasedID
-               // 
-               this.colReleasedID.FieldName = "ReleasedID";
-               this.colReleasedID.Name = "colReleasedID";
-               this.colReleasedID.Width = 83;
-               // 
-               // colPublisher
-               // 
-               this.colPublisher.FieldName = "Publisher";
-               this.colPublisher.Name = "colPublisher";
-               this.colPublisher.Visible = true;
-               this.colPublisher.VisibleIndex = 4;
-               this.colPublisher.Width = 105;
-               // 
-               // colPublisherID
-               // 
-               this.colPublisherID.FieldName = "PublisherID";
-               this.colPublisherID.Name = "colPublisherID";
-               this.colPublisherID.Width = 83;
-               // 
-               // colNumberPage
-               // 
-               this.colNumberPage.FieldName = "NumberPage";
-               this.colNumberPage.Name = "colNumberPage";
-               this.colNumberPage.Visible = true;
-               this.colNumberPage.VisibleIndex = 5;
-               this.colNumberPage.Width = 96;
-               // 
-               // colWeight
-               // 
-               this.colWeight.FieldName = "Weight";
-               this.colWeight.Name = "colWeight";
-               this.colWeight.Visible = true;
-               this.colWeight.VisibleIndex = 6;
-               this.colWeight.Width = 61;
-               // 
-               // colForm
-               // 
-               this.colForm.FieldName = "Form";
-               this.colForm.Name = "colForm";
-               this.colForm.Visible = true;
-               this.colForm.VisibleIndex = 7;
-               this.colForm.Width = 98;
-               // 
-               // colPublishDate
-               // 
-               this.colPublishDate.FieldName = "PublishDate";
-               this.colPublishDate.Name = "colPublishDate";
-               this.colPublishDate.Visible = true;
-               this.colPublishDate.VisibleIndex = 8;
-               this.colPublishDate.Width = 98;
-               // 
-               // colBuys
-               // 
-               this.colBuys.FieldName = "Buys";
-               this.colBuys.Name = "colBuys";
-               this.colBuys.Visible = true;
-               this.colBuys.VisibleIndex = 9;
-               this.colBuys.Width = 56;
-               // 
-               // colPrice
-               // 
-               this.colPrice.FieldName = "Price";
-               this.colPrice.Name = "colPrice";
-               this.colPrice.Visible = true;
-               this.colPrice.VisibleIndex = 10;
-               this.colPrice.Width = 102;
-               // 
-               // colPromotionPrice
-               // 
-               this.colPromotionPrice.FieldName = "PromotionPrice";
-               this.colPromotionPrice.Name = "colPromotionPrice";
-               this.colPromotionPrice.Visible = true;
-               this.colPromotionPrice.VisibleIndex = 11;
-               this.colPromotionPrice.Width = 102;
-               // 
-               // colCategoryID
-               // 
-               this.colCategoryID.FieldName = "CategoryID";
-               this.colCategoryID.Name = "colCategoryID";
-               this.colCategoryID.Visible = true;
-               this.colCategoryID.VisibleIndex = 12;
-               this.colCategoryID.Width = 83;
-               // 
-               // colViewCount
-               // 
-               this.colViewCount.FieldName = "ViewCount";
-               this.colViewCount.Name = "colViewCount";
-               this.colViewCount.Visible = true;
-               this.colViewCount.VisibleIndex = 13;
-               this.colViewCount.Width = 89;
-               // 
-               // colLikeCount
-               // 
-               this.colLikeCount.FieldName = "LikeCount";
-               this.colLikeCount.Name = "colLikeCount";
-               this.colLikeCount.Width = 71;
-               // 
-               // colInventory
-               // 
-               this.colInventory.FieldName = "Inventory";
-               this.colInventory.Name = "colInventory";
-               this.colInventory.Visible = true;
-               this.colInventory.VisibleIndex = 14;
-               this.colInventory.Width = 60;
-               // 
-               // colStatus
-               // 
-               this.colStatus.FieldName = "Status";
-               this.colStatus.Name = "colStatus";
-               this.colStatus.Visible = true;
-               this.colStatus.VisibleIndex = 15;
-               this.colStatus.Width = 54;
-               // 
-               // colImage
-               // 
-               this.colImage.FieldName = "Image";
-               this.colImage.Name = "colImage";
-               this.colImage.Visible = true;
-               this.colImage.VisibleIndex = 16;
-               this.colImage.Width = 149;
-               // 
-               // colDescription
-               // 
-               this.colDescription.FieldName = "Description";
-               this.colDescription.Name = "colDescription";
-               this.colDescription.Visible = true;
-               this.colDescription.VisibleIndex = 17;
-               this.colDescription.Width = 292;
                // 
                // label6
                // 
@@ -332,35 +176,59 @@
                // 
                // cmbboxAuthor
                // 
+               this.cmbboxAuthor.DataSource = this.authorViewModelBindingSource;
+               this.cmbboxAuthor.DisplayMember = "Name";
                this.cmbboxAuthor.FormattingEnabled = true;
                this.cmbboxAuthor.Location = new System.Drawing.Point(134, 137);
                this.cmbboxAuthor.Name = "cmbboxAuthor";
                this.cmbboxAuthor.Size = new System.Drawing.Size(323, 24);
                this.cmbboxAuthor.TabIndex = 8;
+               this.cmbboxAuthor.ValueMember = "ID";
+               // 
+               // authorViewModelBindingSource
+               // 
+               this.authorViewModelBindingSource.DataSource = typeof(AppQuanLy.Models.AuthorViewModel);
                // 
                // cmbboxRealeased
                // 
+               this.cmbboxRealeased.DataSource = this.publisherBindingSource;
+               this.cmbboxRealeased.DisplayMember = "Name";
                this.cmbboxRealeased.FormattingEnabled = true;
                this.cmbboxRealeased.Location = new System.Drawing.Point(134, 167);
                this.cmbboxRealeased.Name = "cmbboxRealeased";
                this.cmbboxRealeased.Size = new System.Drawing.Size(323, 24);
                this.cmbboxRealeased.TabIndex = 8;
+               this.cmbboxRealeased.ValueMember = "ID";
+               // 
+               // publisherBindingSource
+               // 
+               this.publisherBindingSource.DataSource = typeof(AppQuanLy.Entities.Publisher);
                // 
                // cmbboxPublisher
                // 
+               this.cmbboxPublisher.DataSource = this.publisherBindingSource;
+               this.cmbboxPublisher.DisplayMember = "Name";
                this.cmbboxPublisher.FormattingEnabled = true;
                this.cmbboxPublisher.Location = new System.Drawing.Point(134, 197);
                this.cmbboxPublisher.Name = "cmbboxPublisher";
                this.cmbboxPublisher.Size = new System.Drawing.Size(323, 24);
                this.cmbboxPublisher.TabIndex = 8;
+               this.cmbboxPublisher.ValueMember = "ID";
                // 
                // cmbboxCategory
                // 
+               this.cmbboxCategory.DataSource = this.bookCategoryBindingSource;
+               this.cmbboxCategory.DisplayMember = "Name";
                this.cmbboxCategory.FormattingEnabled = true;
                this.cmbboxCategory.Location = new System.Drawing.Point(133, 227);
                this.cmbboxCategory.Name = "cmbboxCategory";
                this.cmbboxCategory.Size = new System.Drawing.Size(324, 24);
                this.cmbboxCategory.TabIndex = 8;
+               this.cmbboxCategory.ValueMember = "ID";
+               // 
+               // bookCategoryBindingSource
+               // 
+               this.bookCategoryBindingSource.DataSource = typeof(AppQuanLy.Entities.BookCategory);
                // 
                // txtbNumberPage
                // 
@@ -543,11 +411,189 @@
                this.picboxImage.TabIndex = 11;
                this.picboxImage.TabStop = false;
                // 
-               // gridColumn1
+               // colID
                // 
-               this.gridColumn1.Name = "gridColumn1";
-               this.gridColumn1.Visible = true;
-               this.gridColumn1.VisibleIndex = 18;
+               this.colID.FieldName = "ID";
+               this.colID.Name = "colID";
+               this.colID.Visible = true;
+               this.colID.VisibleIndex = 0;
+               this.colID.Width = 46;
+               // 
+               // colCode
+               // 
+               this.colCode.FieldName = "Code";
+               this.colCode.Name = "colCode";
+               this.colCode.Visible = true;
+               this.colCode.VisibleIndex = 1;
+               this.colCode.Width = 79;
+               // 
+               // colName
+               // 
+               this.colName.FieldName = "Name";
+               this.colName.Name = "colName";
+               this.colName.Visible = true;
+               this.colName.VisibleIndex = 2;
+               this.colName.Width = 108;
+               // 
+               // colAuthor
+               // 
+               this.colAuthor.FieldName = "Author";
+               this.colAuthor.Name = "colAuthor";
+               this.colAuthor.Visible = true;
+               this.colAuthor.VisibleIndex = 3;
+               this.colAuthor.Width = 123;
+               // 
+               // colAuthorID
+               // 
+               this.colAuthorID.FieldName = "AuthorID";
+               this.colAuthorID.Name = "colAuthorID";
+               // 
+               // colReleased
+               // 
+               this.colReleased.FieldName = "Released";
+               this.colReleased.Name = "colReleased";
+               this.colReleased.Visible = true;
+               this.colReleased.VisibleIndex = 4;
+               this.colReleased.Width = 137;
+               // 
+               // colReleasedID
+               // 
+               this.colReleasedID.FieldName = "ReleasedID";
+               this.colReleasedID.Name = "colReleasedID";
+               // 
+               // colPublisher
+               // 
+               this.colPublisher.FieldName = "Publisher";
+               this.colPublisher.Name = "colPublisher";
+               this.colPublisher.Visible = true;
+               this.colPublisher.VisibleIndex = 5;
+               this.colPublisher.Width = 129;
+               // 
+               // colPublisherID
+               // 
+               this.colPublisherID.FieldName = "PublisherID";
+               this.colPublisherID.Name = "colPublisherID";
+               // 
+               // colNumberPage
+               // 
+               this.colNumberPage.FieldName = "NumberPage";
+               this.colNumberPage.Name = "colNumberPage";
+               this.colNumberPage.Visible = true;
+               this.colNumberPage.VisibleIndex = 6;
+               this.colNumberPage.Width = 80;
+               // 
+               // colWeight
+               // 
+               this.colWeight.FieldName = "Weight";
+               this.colWeight.Name = "colWeight";
+               this.colWeight.Visible = true;
+               this.colWeight.VisibleIndex = 7;
+               // 
+               // colForm
+               // 
+               this.colForm.FieldName = "Form";
+               this.colForm.Name = "colForm";
+               this.colForm.Visible = true;
+               this.colForm.VisibleIndex = 8;
+               // 
+               // colPublishDate
+               // 
+               this.colPublishDate.FieldName = "PublishDate";
+               this.colPublishDate.Name = "colPublishDate";
+               this.colPublishDate.Visible = true;
+               this.colPublishDate.VisibleIndex = 9;
+               this.colPublishDate.Width = 108;
+               // 
+               // colBuys
+               // 
+               this.colBuys.FieldName = "Buys";
+               this.colBuys.Name = "colBuys";
+               this.colBuys.Visible = true;
+               this.colBuys.VisibleIndex = 10;
+               // 
+               // colPrice
+               // 
+               this.colPrice.FieldName = "Price";
+               this.colPrice.Name = "colPrice";
+               this.colPrice.Visible = true;
+               this.colPrice.VisibleIndex = 11;
+               // 
+               // colPromotionPrice
+               // 
+               this.colPromotionPrice.FieldName = "PromotionPrice";
+               this.colPromotionPrice.Name = "colPromotionPrice";
+               this.colPromotionPrice.Visible = true;
+               this.colPromotionPrice.VisibleIndex = 12;
+               this.colPromotionPrice.Width = 117;
+               // 
+               // colCategory
+               // 
+               this.colCategory.FieldName = "Category";
+               this.colCategory.Name = "colCategory";
+               this.colCategory.Visible = true;
+               this.colCategory.VisibleIndex = 13;
+               this.colCategory.Width = 106;
+               // 
+               // colCategoryID
+               // 
+               this.colCategoryID.FieldName = "CategoryID";
+               this.colCategoryID.Name = "colCategoryID";
+               // 
+               // colViewCount
+               // 
+               this.colViewCount.FieldName = "ViewCount";
+               this.colViewCount.Name = "colViewCount";
+               this.colViewCount.Visible = true;
+               this.colViewCount.VisibleIndex = 14;
+               // 
+               // colLikeCount
+               // 
+               this.colLikeCount.FieldName = "LikeCount";
+               this.colLikeCount.Name = "colLikeCount";
+               // 
+               // colInventory
+               // 
+               this.colInventory.FieldName = "Inventory";
+               this.colInventory.Name = "colInventory";
+               this.colInventory.Visible = true;
+               this.colInventory.VisibleIndex = 15;
+               // 
+               // colStatus
+               // 
+               this.colStatus.FieldName = "Status";
+               this.colStatus.Name = "colStatus";
+               this.colStatus.Visible = true;
+               this.colStatus.VisibleIndex = 20;
+               // 
+               // colImage
+               // 
+               this.colImage.FieldName = "Image";
+               this.colImage.Name = "colImage";
+               this.colImage.Visible = true;
+               this.colImage.VisibleIndex = 16;
+               // 
+               // colDescription
+               // 
+               this.colDescription.FieldName = "Description";
+               this.colDescription.Name = "colDescription";
+               this.colDescription.Visible = true;
+               this.colDescription.VisibleIndex = 17;
+               // 
+               // colModifiedDate
+               // 
+               this.colModifiedDate.FieldName = "ModifiedDate";
+               this.colModifiedDate.Name = "colModifiedDate";
+               this.colModifiedDate.Visible = true;
+               this.colModifiedDate.VisibleIndex = 18;
+               this.colModifiedDate.Width = 112;
+               // 
+               // colModifiedBy
+               // 
+               this.colModifiedBy.FieldName = "ModifiedBy";
+               this.colModifiedBy.Name = "colModifiedBy";
+               this.colModifiedBy.Visible = true;
+               this.colModifiedBy.VisibleIndex = 19;
+               this.colModifiedBy.Width = 104;
                // 
                // BooksUC
                // 
@@ -587,6 +633,9 @@
                ((System.ComponentModel.ISupportInitialize)(this.gridctrlBook)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.bookViewModelBindingSource)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.gridviewBook)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.authorViewModelBindingSource)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.publisherBindingSource)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.bookCategoryBindingSource)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
                this.ResumeLayout(false);
                this.PerformLayout();
@@ -627,6 +676,10 @@
           private System.Windows.Forms.Button btnDelete;
           private System.Windows.Forms.PictureBox picboxImage;
           private System.Windows.Forms.BindingSource bookViewModelBindingSource;
+          private System.Windows.Forms.BindingSource authorViewModelBindingSource;
+          private System.Windows.Forms.BindingSource publisherBindingSource;
+          private System.Windows.Forms.BindingSource bookCategoryBindingSource;
+          private DevExpress.XtraGrid.Columns.GridColumn colID;
           private DevExpress.XtraGrid.Columns.GridColumn colCode;
           private DevExpress.XtraGrid.Columns.GridColumn colName;
           private DevExpress.XtraGrid.Columns.GridColumn colAuthor;
@@ -642,6 +695,7 @@
           private DevExpress.XtraGrid.Columns.GridColumn colBuys;
           private DevExpress.XtraGrid.Columns.GridColumn colPrice;
           private DevExpress.XtraGrid.Columns.GridColumn colPromotionPrice;
+          private DevExpress.XtraGrid.Columns.GridColumn colCategory;
           private DevExpress.XtraGrid.Columns.GridColumn colCategoryID;
           private DevExpress.XtraGrid.Columns.GridColumn colViewCount;
           private DevExpress.XtraGrid.Columns.GridColumn colLikeCount;
@@ -649,6 +703,7 @@
           private DevExpress.XtraGrid.Columns.GridColumn colStatus;
           private DevExpress.XtraGrid.Columns.GridColumn colImage;
           private DevExpress.XtraGrid.Columns.GridColumn colDescription;
-          private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+          private DevExpress.XtraGrid.Columns.GridColumn colModifiedDate;
+          private DevExpress.XtraGrid.Columns.GridColumn colModifiedBy;
      }
 }

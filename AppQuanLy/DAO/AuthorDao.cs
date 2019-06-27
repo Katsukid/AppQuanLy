@@ -23,17 +23,13 @@ namespace AppQuanLy.DAO
           public static AuthorViewModel TakeView(int id)
           {
                var author = Take(id);
-               var type = AuthorTypeDao.Take((int)author.AuthorType);
-               return new AuthorViewModel(author,type);
+               return new AuthorViewModel(author);
           }
           public static List<AuthorViewModel> TakeAllView(int? number)
           {
                var authors = TakeAll(number);
-               var types = AuthorTypeDao.TakeAll();
                var ls = (from a in authors
-                         join b in types
-                         on a.AuthorType equals b.ID
-                         select new AuthorViewModel(a, b)).ToList();
+                         select new AuthorViewModel(a)).ToList();
                return ls;
           }
      }

@@ -27,7 +27,7 @@ namespace AppQuanLy.Helper
                     {
                          data = JsonConvert.DeserializeObject<T>(result);
                     }
-               }               
+               }
                return data;
           }
           // POST
@@ -47,7 +47,7 @@ namespace AppQuanLy.Helper
                     }
                }
                return objectOut;
-          }        
+          }
           // PUT
           public static T SendPutRequest<T>(string path, T p)
           {
@@ -55,8 +55,9 @@ namespace AppQuanLy.Helper
                using (var client = new HttpClient())
                {
                     var data = JsonConvert.SerializeObject(p);
+                    var httpContent = new StringContent(data, Encoding.UTF8, "application/json");
                     client.BaseAddress = new Uri(restfull);
-                    var res = client.PutAsync(path + data, null).Result;
+                    var res = client.PutAsync(path, httpContent).Result;
                     if (res.IsSuccessStatusCode)
                     {
                          var result = res.Content.ReadAsStringAsync().Result;
@@ -74,6 +75,38 @@ namespace AppQuanLy.Helper
                {
                     client.BaseAddress = new Uri(restfull);
                     var res = client.DeleteAsync(path + id).Result;
+                    if (res.IsSuccessStatusCode)
+                    {
+                         var result = res.Content.ReadAsStringAsync().Result;
+                         objectOut = JsonConvert.DeserializeObject<bool>(result);
+                         return objectOut;
+                    }
+               }
+               return objectOut;
+          }
+          public static bool SendDeleteRequest(string path, long id)
+          {
+               bool objectOut = false;
+               using (var client = new HttpClient())
+               {
+                    client.BaseAddress = new Uri(restfull);
+                    var res = client.DeleteAsync(path + id).Result;
+                    if (res.IsSuccessStatusCode)
+                    {
+                         var result = res.Content.ReadAsStringAsync().Result;
+                         objectOut = JsonConvert.DeserializeObject<bool>(result);
+                         return objectOut;
+                    }
+               }
+               return objectOut;
+          }
+          public static bool SendDeleteRequest(string path)
+          {
+               bool objectOut = false;
+               using (var client = new HttpClient())
+               {
+                    client.BaseAddress = new Uri(restfull);
+                    var res = client.DeleteAsync(path).Result;
                     if (res.IsSuccessStatusCode)
                     {
                          var result = res.Content.ReadAsStringAsync().Result;

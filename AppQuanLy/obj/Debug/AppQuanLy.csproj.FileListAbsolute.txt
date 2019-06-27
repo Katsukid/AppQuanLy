@@ -100,7 +100,5 @@ D:\Visual Studio\Source\AppQuanLy\AppQuanLy\bin\Debug\ja\DevExpress.Office.v17.1
 D:\Visual Studio\Source\AppQuanLy\AppQuanLy\bin\Debug\ru\DevExpress.Office.v17.1.Core.resources.dll
 D:\Visual Studio\Source\AppQuanLy\AppQuanLy\obj\Debug\AppQuanLy.GUI.BooksUC.resources
 D:\Visual Studio\Source\AppQuanLy\AppQuanLy\bin\Debug\FastMember.dll
-D:\Visual Studio\Source\AppQuanLy\AppQuanLy\obj\Debug\AppQuanLy.GUI.AuthorTypeUC.resources
 D:\Visual Studio\Source\AppQuanLy\AppQuanLy\obj\Debug\AppQuanLy.csprojAssemblyReference.cache
 D:\Visual Studio\Source\AppQuanLy\AppQuanLy\obj\Debug\AppQuanLy.GUI.AuthorUC.resources
-D:\Visual Studio\Source\AppQuanLy\AppQuanLy\obj\Debug\AppQuanLy.GUI.ImageUC.resources

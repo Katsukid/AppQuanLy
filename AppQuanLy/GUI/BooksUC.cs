@@ -9,19 +9,37 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppQuanLy.Models;
 using AppQuanLy.Helper;
+using AppQuanLy.Entities;
 using FastMember;
+using AppQuanLy.DAO;
+
 namespace AppQuanLy.GUI
 {
      public partial class BooksUC : UserControl
      {
+          private AppQuanLyDbContext db;
+          private List<Author> authors;
+          private List<BookCategory> bookcate;
+          private List<Publisher> pub;
+          private List<Publisher> pub2;
           public BooksUC()
           {
+               db = new AppQuanLyDbContext();
+               authors = db.Authors;
+               bookcate = db.BookCategories;
+               pub = db.Publishers;
+               pub2 = db.Publishers;
                InitializeComponent();
           }
           public void BooksUC_Load(object sender, EventArgs e)
           {
-               var data = JSONHelper.SendGetRequest<List<BookViewModel>>("sach?number");
+               var dao = new BookDao();
+               var data = db.Books.Select(x => dao.toViewModel(x));
                this.gridctrlBook.DataSource = data;
+               cmbboxAuthor.DataSource = authors;
+               cmbboxCategory.DataSource = bookcate;
+               cmbboxPublisher.DataSource = pub;
+               cmbboxRealeased.DataSource = pub2;
                EstablishBtn(true);
                EstablishInputBox(true);
           }
@@ -70,10 +88,14 @@ namespace AppQuanLy.GUI
                txtboxName.Text = row.Name;
                txtbNumberPage.Text = row.NumberPage.ToString();
                txtbDescription.Text = row.Description;
-               cmbboxAuthor.Text = row.Author;
-               cmbboxCategory.Text = row.CategoryID.ToString();
-               cmbboxPublisher.Text = row.Publisher;
-               cmbboxRealeased.Text = row.Released;
+               cmbboxAuthor.SelectedValue = row.AuthorID;
+               cmbboxCategory.SelectedValue = row.CategoryID;
+               cmbboxPublisher.SelectedValue = row.PublisherID;
+               cmbboxRealeased.SelectedValue = row.ReleasedID;
+               //cmbboxAuthor.SelectedText = row.Author;
+               //cmbboxCategory.SelectedText = row.Category;
+               //cmbboxPublisher.SelectedText = row.Publisher;
+               //cmbboxRealeased.SelectedText = row.Released;
           }
 
           private void btnAdd_Click(object sender, EventArgs e)

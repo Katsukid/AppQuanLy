@@ -75,7 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AuthorDao.cs" />
-    <Compile Include="DAO\AuthorTypeDao.cs" />
     <Compile Include="DAO\BookCategoryDao.cs" />
     <Compile Include="DAO\SatusOrderDao.cs" />
     <Compile Include="DAO\UserDao.cs" />
@@ -91,19 +90,17 @@
     <Compile Include="DAO\OrderDao.cs" />
     <Compile Include="DAO\NewsTypeDao.cs" />
     <Compile Include="DAO\NewsDao.cs" />
-    <Compile Include="DAO\ImageDao.cs" />
     <Compile Include="DAO\FeedbackDao.cs" />
     <Compile Include="DAO\CategoryDao.cs" />
     <Compile Include="DAO\BookDao.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="Entities\AppQuanLyDbContext.cs" />
     <Compile Include="Entities\Author.cs" />
-    <Compile Include="Entities\AuthorType.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\BookCategory.cs" />
     <Compile Include="Entities\CartItem.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Feedback.cs" />
-    <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\News.cs" />
     <Compile Include="Entities\NewsType.cs" />
     <Compile Include="Entities\Order.cs" />
@@ -114,7 +111,6 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\ShippingType.cs" />
     <Compile Include="Entities\Slide.cs" />
-    <Compile Include="Entities\StatusOrder.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserGroup.cs" />
     <Compile Include="GUI\AuthorUC.cs">
@@ -122,12 +118,6 @@
     </Compile>
     <Compile Include="GUI\AuthorUC.Designer.cs">
       <DependentUpon>AuthorUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\AuthorTypeUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\AuthorTypeUC.Designer.cs">
-      <DependentUpon>AuthorTypeUC.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\BooksUC.cs">
       <SubType>UserControl</SubType>
@@ -141,12 +131,6 @@
     <Compile Include="GUI\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ImageUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\ImageUC.Designer.cs">
-      <DependentUpon>ImageUC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\JSONHelper.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -156,7 +140,6 @@
     </Compile>
     <Compile Include="Models\AuthorViewModel.cs" />
     <Compile Include="Models\BookCateVIewModel.cs" />
-    <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\BookViewModel.cs" />
     <Compile Include="Models\CartItemDetail.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
@@ -177,17 +160,11 @@
     <EmbeddedResource Include="GUI\AuthorUC.resx">
       <DependentUpon>AuthorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AuthorTypeUC.resx">
-      <DependentUpon>AuthorTypeUC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BooksUC.resx">
       <DependentUpon>BooksUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ImageUC.resx">
-      <DependentUpon>ImageUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -209,7 +186,9 @@
     <None Include="Assets\Img\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AppQuanLy.Entities.AuthorType.datasource" />
+    <None Include="Properties\DataSources\AppQuanLy.Entities.BookCategory.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Entities.Image.datasource" />
+    <None Include="Properties\DataSources\AppQuanLy.Entities.Publisher.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Models.AuthorViewModel.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Models.BookViewModel.datasource" />
     <None Include="Properties\Settings.settings">

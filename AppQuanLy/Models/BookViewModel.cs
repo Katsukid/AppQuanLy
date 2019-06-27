@@ -41,14 +41,14 @@ namespace AppQuanLy.Models
           public decimal? Price { get; set; }
 
           public decimal? PromotionPrice { get; set; }
-
+          public string Category { get; set; }
           public long? CategoryID { get; set; }
 
           public int? ViewCount { get; set; }
 
           public int? LikeCount { get; set; }
 
-          public decimal? Inventory { get; set; }
+          public int? Inventory { get; set; }
 
           public bool? Status { get; set; }
 
@@ -56,5 +56,10 @@ namespace AppQuanLy.Models
           public string Image { get; set; }
 
           public string Description { get; set; }
+
+          public DateTime? ModifiedDate { get; set; }
+
+          [StringLength(50)]
+          public string ModifiedBy { get; set; }
      }
 }
