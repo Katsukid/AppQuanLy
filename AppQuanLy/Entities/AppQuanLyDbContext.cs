@@ -60,6 +60,10 @@
           {
                get { return JSONHelper.SendGetRequest<List<User>>("nguoi-dung?number"); }
           }
+          public List<Image> Images
+          {
+               get { return JSONHelper.SendGetRequest<List<Image>>("hinh-anh?number"); }
+          }
      }
 
 }

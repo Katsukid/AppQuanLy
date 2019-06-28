@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Data.v17.1" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.Utils.v17.1" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v17.1" />
@@ -57,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -64,6 +66,9 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,6 +106,7 @@
     <Compile Include="Entities\CartItem.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Feedback.cs" />
+    <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\News.cs" />
     <Compile Include="Entities\NewsType.cs" />
     <Compile Include="Entities\Order.cs" />
@@ -131,6 +137,12 @@
     <Compile Include="GUI\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ListImageWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ListImageWF.Designer.cs">
+      <DependentUpon>ListImageWF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\JSONHelper.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -143,6 +155,7 @@
     <Compile Include="Models\BookViewModel.cs" />
     <Compile Include="Models\CartItemDetail.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
+    <Compile Include="Models\ImageViewModel.cs" />
     <Compile Include="Models\ImportModel.cs" />
     <Compile Include="Models\IndexCartModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -166,6 +179,9 @@
     <EmbeddedResource Include="GUI\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ListImageWF.resx">
+      <DependentUpon>ListImageWF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,8 +198,8 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Assets\Img\lake_waterfall_nikon_croatia_plitvice_d300_hvratska-474692.jpg!d" />
-    <None Include="Assets\Img\Thumbs.db" />
+    <None Include="assets\Client\images\lake_waterfall_nikon_croatia_plitvice_d300_hvratska-474692.jpg!d" />
+    <None Include="assets\Client\images\Thumbs.db" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AppQuanLy.Entities.AuthorType.datasource" />
     <None Include="Properties\DataSources\AppQuanLy.Entities.BookCategory.datasource" />
@@ -200,83 +216,238 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\ckeditor5\ckeditor.js.map" />
+    <None Include="Resources\ckeditor5\LICENSE.md" />
+    <None Include="Resources\ckeditor5\README.md" />
+    <None Include="Resources\CkEditor\toolbarconfigurator\font\config.json" />
+    <None Include="Resources\CkEditor\toolbarconfigurator\font\fontello.eot" />
+    <None Include="Resources\CkEditor\toolbarconfigurator\font\fontello.ttf" />
+    <None Include="Resources\CkEditor\toolbarconfigurator\font\fontello.woff" />
+    <None Include="Resources\CkEditor\toolbarconfigurator\lib\codemirror\LICENSE" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CKEditorControl\CKEditorBrowserControls.csproj">
+      <Project>{c9d98dd6-c683-43cc-b541-ee058577bb0c}</Project>
+      <Name>CKEditorBrowserControls</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Img\11458-khi-hoi-tho-hoa-thinh-khong-banner.jpg" />
-    <Content Include="Assets\Img\2013-boxset__14117.jpg" />
-    <Content Include="Assets\Img\2013-boxset__14117_thum_135.jpg" />
-    <Content Include="Assets\Img\2013-tap-1__53586_image2_800_thum.jpg" />
-    <Content Include="Assets\Img\70871-banner-ehon-nhat-ban-pibook.jpg" />
-    <Content Include="Assets\Img\an-mang-o-cong-vien__24784_thum_135.jpg" />
-    <Content Include="Assets\Img\anh-nen.jpg" />
-    <Content Include="Assets\Img\apple.png" />
-    <Content Include="Assets\Img\banner1.png" />
-    <Content Include="Assets\Img\banner2.png" />
-    <Content Include="Assets\Img\bd_lmenu.png" />
-    <Content Include="Assets\Img\bd_rmenu.png" />
-    <Content Include="Assets\Img\best.png" />
-    <Content Include="Assets\Img\bg_h.png" />
-    <Content Include="Assets\Img\bg_vina_title.png" />
-    <Content Include="Assets\Img\bon-vuong-o-day-2017__28233_thum_135.jpg" />
-    <Content Include="Assets\Img\boxet-Banner.jpg" />
-    <Content Include="Assets\Img\cach-thuc-mua-hang.gif" />
-    <Content Include="Assets\Img\combo-phu-dao-hoang-hau__47809_thum_135.jpg" />
-    <Content Include="Assets\Img\day-con-lam-giau-tap-9__29608_thum_135.jpg" />
-    <Content Include="Assets\Img\doi-thay-doi-khi-chung-ta-thay-doi-ohay-tv-98954.jpg" />
-    <Content Include="Assets\Img\down.png" />
-    <Content Include="Assets\Img\ga-nghien-giay__57680.jpg" />
-    <Content Include="Assets\Img\ga-nghien-giay__57680_thum_135.jpg" />
-    <Content Include="Assets\Img\hanh-trinh-cua-elaina-tap-2__07386.jpg" />
-    <Content Include="Assets\Img\hau-due-mat-troi__15912_thum_135.jpg" />
-    <Content Include="Assets\Img\hoc-ngoai-ngu__61937.jpg" />
-    <Content Include="Assets\Img\home_menu.png" />
-    <Content Include="Assets\Img\hot.png" />
-    <Content Include="Assets\Img\hotline.png" />
-    <Content Include="Assets\Img\hyperledger-icon.png" />
-    <Content Include="Assets\Img\img-tin.jpg" />
-    <Content Include="Assets\Img\img1.jpg" />
-    <Content Include="Assets\Img\login_btn.png" />
-    <Content Include="Assets\Img\logo.png" />
-    <Content Include="Assets\Img\Logo1.png" />
-    <Content Include="Assets\Img\Logo2.png" />
-    <Content Include="Assets\Img\logo_book.png" />
-    <Content Include="Assets\Img\mua-dong-dai__19998_thum_135.jpg" />
-    <Content Include="Assets\Img\new.png" />
-    <Content Include="Assets\Img\noimage.gif" />
-    <Content Include="Assets\Img\orange-arrow-r.png" />
-    <Content Include="Assets\Img\phap-y-tan-minh-Banner.png" />
-    <Content Include="Assets\Img\phap-y-tan-minh__95577.jpg" />
-    <Content Include="Assets\Img\phone-24.png" />
-    <Content Include="Assets\Img\right.png" />
-    <Content Include="Assets\Img\rung-mua__39786.jpg" />
-    <Content Include="Assets\Img\sach-chuyen-nganh__81172.jpg" />
-    <Content Include="Assets\Img\sach-ki-nang-song__84906.jpg" />
-    <Content Include="Assets\Img\sach-kinh-te__44040.jpg" />
-    <Content Include="Assets\Img\sach-thieu-nhi__04040.jpg" />
-    <Content Include="Assets\Img\sach-tuoi-teen.jpg" />
-    <Content Include="Assets\Img\saleprice.png" />
-    <Content Include="Assets\Img\sat-pha-lang-tap-3__83580.jpg" />
-    <Content Include="Assets\Img\slide1.jpg" />
-    <Content Include="Assets\Img\slide2.jpg" />
-    <Content Include="Assets\Img\Solid-color-wallpaper-hd-download.jpg" />
-    <Content Include="Assets\Img\thien-su-chap-vi-combo__15483.jpg" />
-    <Content Include="Assets\Img\tiem-do-co-a-xa-tap-3-Banner.jpg" />
-    <Content Include="Assets\Img\tiem-do-co-a-xa-tap-3__89223.jpg" />
-    <Content Include="Assets\Img\truong-han-tap-2__17693_thum_135.jpg" />
-    <Content Include="Assets\Img\tu-duy-nhanh-va-cham__49541_thum_135.jpg" />
-    <Content Include="Assets\Img\uber-chuyen-di-bao-tap__93771_thum_135.jpg" />
-    <Content Include="Assets\Img\vab-hoc-nuoc-ngoai.jpg" />
-    <Content Include="Assets\Img\van-hoc-trong-nuoc.jpg" />
-    <Content Include="Assets\Img\vi-gio-o-noi-ay-banner.jpg" />
-    <Content Include="Assets\Img\vi-gio-o-noi-ay__76521_thum_135.jpg" />
-    <Content Include="Assets\Img\vi-nguoi-ay-la-em__55366_thum_135.jpg" />
-    <Content Include="Assets\Img\vuong-bat-kien-vuong-tap-2__49538_thum_135.jpg" />
-    <Content Include="Assets\Img\yeu-chi-la-huu-danh__05605.jpg" />
-    <Content Include="Assets\Img\yeu-la-huu-danh-vo-thuc_banner.jpg" />
+    <Content Include="assets\Client\images\11458-khi-hoi-tho-hoa-thinh-khong-banner.jpg" />
+    <Content Include="assets\Client\images\2013-boxset__14117.jpg" />
+    <Content Include="assets\Client\images\2013-boxset__14117_thum_135.jpg" />
+    <Content Include="assets\Client\images\2013-tap-1__53586_image2_800_thum.jpg" />
+    <Content Include="assets\Client\images\70871-banner-ehon-nhat-ban-pibook.jpg" />
+    <Content Include="assets\Client\images\an-mang-o-cong-vien__24784_thum_135.jpg" />
+    <Content Include="assets\Client\images\anh-nen.jpg" />
+    <Content Include="assets\Client\images\apple.png" />
+    <Content Include="assets\Client\images\banner1.png" />
+    <Content Include="assets\Client\images\banner2.png" />
+    <Content Include="assets\Client\images\bd_lmenu.png" />
+    <Content Include="assets\Client\images\bd_rmenu.png" />
+    <Content Include="assets\Client\images\best.png" />
+    <Content Include="assets\Client\images\bg_h.png" />
+    <Content Include="assets\Client\images\bg_vina_title.png" />
+    <Content Include="assets\Client\images\bon-vuong-o-day-2017__28233_thum_135.jpg" />
+    <Content Include="assets\Client\images\boxet-Banner.jpg" />
+    <Content Include="assets\Client\images\cach-thuc-mua-hang.gif" />
+    <Content Include="assets\Client\images\combo-phu-dao-hoang-hau__47809_thum_135.jpg" />
+    <Content Include="assets\Client\images\day-con-lam-giau-tap-9__29608_thum_135.jpg" />
+    <Content Include="assets\Client\images\doi-thay-doi-khi-chung-ta-thay-doi-ohay-tv-98954.jpg" />
+    <Content Include="assets\Client\images\down.png" />
+    <Content Include="assets\Client\images\ga-nghien-giay__57680.jpg" />
+    <Content Include="assets\Client\images\ga-nghien-giay__57680_thum_135.jpg" />
+    <Content Include="assets\Client\images\hanh-trinh-cua-elaina-tap-2__07386.jpg" />
+    <Content Include="assets\Client\images\hau-due-mat-troi__15912_thum_135.jpg" />
+    <Content Include="assets\Client\images\hoc-ngoai-ngu__61937.jpg" />
+    <Content Include="assets\Client\images\home_menu.png" />
+    <Content Include="assets\Client\images\hot.png" />
+    <Content Include="assets\Client\images\hotline.png" />
+    <Content Include="assets\Client\images\hyperledger-icon.png" />
+    <Content Include="assets\Client\images\img-tin.jpg" />
+    <Content Include="assets\Client\images\img1.jpg" />
+    <Content Include="assets\Client\images\login_btn.png" />
+    <Content Include="assets\Client\images\logo.png" />
+    <Content Include="assets\Client\images\Logo1.png" />
+    <Content Include="assets\Client\images\Logo2.png" />
+    <Content Include="assets\Client\images\logo_book.png" />
+    <Content Include="assets\Client\images\mua-dong-dai__19998_thum_135.jpg" />
+    <Content Include="assets\Client\images\new.png" />
+    <Content Include="assets\Client\images\noimage.gif" />
+    <Content Include="assets\Client\images\orange-arrow-r.png" />
+    <Content Include="assets\Client\images\phap-y-tan-minh-Banner.png" />
+    <Content Include="assets\Client\images\phap-y-tan-minh__95577.jpg" />
+    <Content Include="assets\Client\images\phone-24.png" />
+    <Content Include="assets\Client\images\right.png" />
+    <Content Include="assets\Client\images\rung-mua__39786.jpg" />
+    <Content Include="assets\Client\images\sach-chuyen-nganh__81172.jpg" />
+    <Content Include="assets\Client\images\sach-ki-nang-song__84906.jpg" />
+    <Content Include="assets\Client\images\sach-kinh-te__44040.jpg" />
+    <Content Include="assets\Client\images\sach-thieu-nhi__04040.jpg" />
+    <Content Include="assets\Client\images\sach-tuoi-teen.jpg" />
+    <Content Include="assets\Client\images\saleprice.png" />
+    <Content Include="assets\Client\images\sat-pha-lang-tap-3__83580.jpg" />
+    <Content Include="assets\Client\images\slide1.jpg" />
+    <Content Include="assets\Client\images\slide2.jpg" />
+    <Content Include="assets\Client\images\Solid-color-wallpaper-hd-download.jpg" />
+    <Content Include="assets\Client\images\thien-su-chap-vi-combo__15483.jpg" />
+    <Content Include="assets\Client\images\tiem-do-co-a-xa-tap-3-Banner.jpg" />
+    <Content Include="assets\Client\images\tiem-do-co-a-xa-tap-3__89223.jpg" />
+    <Content Include="assets\Client\images\truong-han-tap-2__17693_thum_135.jpg" />
+    <Content Include="assets\Client\images\tu-duy-nhanh-va-cham__49541_thum_135.jpg" />
+    <Content Include="assets\Client\images\uber-chuyen-di-bao-tap__93771_thum_135.jpg" />
+    <Content Include="assets\Client\images\vab-hoc-nuoc-ngoai.jpg" />
+    <Content Include="assets\Client\images\van-hoc-trong-nuoc.jpg" />
+    <Content Include="assets\Client\images\vi-gio-o-noi-ay-banner.jpg" />
+    <Content Include="assets\Client\images\vi-gio-o-noi-ay__76521_thum_135.jpg" />
+    <Content Include="assets\Client\images\vi-nguoi-ay-la-em__55366_thum_135.jpg" />
+    <Content Include="assets\Client\images\vuong-bat-kien-vuong-tap-2__49538_thum_135.jpg" />
+    <Content Include="assets\Client\images\yeu-chi-la-huu-danh__05605.jpg" />
+    <Content Include="assets\Client\images\yeu-la-huu-danh-vo-thuc_banner.jpg" />
+    <Content Include="Resources\ckeditor5\ckeditor.js" />
+    <Content Include="Resources\ckeditor5\index.html" />
+    <Content Include="Resources\ckeditor5\sample\css\sample.css" />
+    <Content Include="Resources\ckeditor5\sample\img\bg.png" />
+    <Content Include="Resources\ckeditor5\sample\img\github.svg" />
+    <Content Include="Resources\ckeditor5\sample\img\logo.svg" />
+    <Content Include="Resources\ckeditor5\sample\img\umbrellas.jpg" />
+    <Content Include="Resources\ckeditor5\translations\af.js" />
+    <Content Include="Resources\ckeditor5\translations\ar.js" />
+    <Content Include="Resources\ckeditor5\translations\ast.js" />
+    <Content Include="Resources\ckeditor5\translations\az.js" />
+    <Content Include="Resources\ckeditor5\translations\bg.js" />
+    <Content Include="Resources\ckeditor5\translations\ca.js" />
+    <Content Include="Resources\ckeditor5\translations\cs.js" />
+    <Content Include="Resources\ckeditor5\translations\da.js" />
+    <Content Include="Resources\ckeditor5\translations\de-ch.js" />
+    <Content Include="Resources\ckeditor5\translations\de.js" />
+    <Content Include="Resources\ckeditor5\translations\el.js" />
+    <Content Include="Resources\ckeditor5\translations\en-au.js" />
+    <Content Include="Resources\ckeditor5\translations\eo.js" />
+    <Content Include="Resources\ckeditor5\translations\es.js" />
+    <Content Include="Resources\ckeditor5\translations\et.js" />
+    <Content Include="Resources\ckeditor5\translations\eu.js" />
+    <Content Include="Resources\ckeditor5\translations\fa.js" />
+    <Content Include="Resources\ckeditor5\translations\fi.js" />
+    <Content Include="Resources\ckeditor5\translations\fr.js" />
+    <Content Include="Resources\ckeditor5\translations\gl.js" />
+    <Content Include="Resources\ckeditor5\translations\gu.js" />
+    <Content Include="Resources\ckeditor5\translations\he.js" />
+    <Content Include="Resources\ckeditor5\translations\hr.js" />
+    <Content Include="Resources\ckeditor5\translations\hu.js" />
+    <Content Include="Resources\ckeditor5\translations\id.js" />
+    <Content Include="Resources\ckeditor5\translations\it.js" />
+    <Content Include="Resources\ckeditor5\translations\ja.js" />
+    <Content Include="Resources\ckeditor5\translations\km.js" />
+    <Content Include="Resources\ckeditor5\translations\kn.js" />
+    <Content Include="Resources\ckeditor5\translations\ko.js" />
+    <Content Include="Resources\ckeditor5\translations\ku.js" />
+    <Content Include="Resources\ckeditor5\translations\lt.js" />
+    <Content Include="Resources\ckeditor5\translations\lv.js" />
+    <Content Include="Resources\ckeditor5\translations\nb.js" />
+    <Content Include="Resources\ckeditor5\translations\ne.js" />
+    <Content Include="Resources\ckeditor5\translations\nl.js" />
+    <Content Include="Resources\ckeditor5\translations\no.js" />
+    <Content Include="Resources\ckeditor5\translations\oc.js" />
+    <Content Include="Resources\ckeditor5\translations\pl.js" />
+    <Content Include="Resources\ckeditor5\translations\pt-br.js" />
+    <Content Include="Resources\ckeditor5\translations\pt.js" />
+    <Content Include="Resources\ckeditor5\translations\ro.js" />
+    <Content Include="Resources\ckeditor5\translations\ru.js" />
+    <Content Include="Resources\ckeditor5\translations\si.js" />
+    <Content Include="Resources\ckeditor5\translations\sk.js" />
+    <Content Include="Resources\ckeditor5\translations\sq.js" />
+    <Content Include="Resources\ckeditor5\translations\sr-latn.js" />
+    <Content Include="Resources\ckeditor5\translations\sr.js" />
+    <Content Include="Resources\ckeditor5\translations\sv.js" />
+    <Content Include="Resources\ckeditor5\translations\tr.js" />
+    <Content Include="Resources\ckeditor5\translations\tt.js" />
+    <Content Include="Resources\ckeditor5\translations\ug.js" />
+    <Content Include="Resources\ckeditor5\translations\uk.js" />
+    <Content Include="Resources\ckeditor5\translations\vi.js" />
+    <Content Include="Resources\ckeditor5\translations\zh-cn.js" />
+    <Content Include="Resources\ckeditor5\translations\zh.js" />
+    <Content Include="Resources\CkEditor\adapters\jquery.js" />
+    <Content Include="Resources\CkEditor\ckeditor.js" />
+    <Content Include="Resources\CkEditor\config.js" />
+    <Content Include="Resources\CkEditor\contents.css" />
+    <Content Include="Resources\CkEditor\css\samples.css" />
+    <Content Include="Resources\CkEditor\index.html" />
+    <Content Include="Resources\CkEditor\lang\en.js" />
+    <Content Include="Resources\CkEditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Resources\CkEditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Resources\CkEditor\plugins\about\dialogs\about.js" />
+    <Content Include="Resources\CkEditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Resources\CkEditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Resources\CkEditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Resources\CkEditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Resources\CkEditor\plugins\icons.png" />
+    <Content Include="Resources\CkEditor\plugins\icons_hidpi.png" />
+    <Content Include="Resources\CkEditor\plugins\image\dialogs\image.js" />
+    <Content Include="Resources\CkEditor\plugins\image\images\noimage.png" />
+    <Content Include="Resources\CkEditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Resources\CkEditor\plugins\link\dialogs\link.js" />
+    <Content Include="Resources\CkEditor\plugins\link\images\anchor.png" />
+    <Content Include="Resources\CkEditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Resources\CkEditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Resources\CkEditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Resources\CkEditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Resources\CkEditor\plugins\magicline\images\icon.png" />
+    <Content Include="Resources\CkEditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Resources\CkEditor\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="Resources\CkEditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Resources\CkEditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Resources\CkEditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="Resources\CkEditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Resources\CkEditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Resources\CkEditor\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="Resources\CkEditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Resources\CkEditor\plugins\table\dialogs\table.js" />
+    <Content Include="Resources\CkEditor\plugins\widget\images\handle.png" />
+    <Content Include="Resources\CkEditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Resources\CkEditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Resources\CkEditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Resources\CkEditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Resources\CkEditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Resources\CkEditor\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\editor.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\icons.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Resources\CkEditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Resources\CkEditor\styles.js" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\index.html" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Resources\CkEditor\toolbarconfigurator\lib\codemirror\show-hint.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

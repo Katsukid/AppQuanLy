@@ -12,6 +12,9 @@ using AppQuanLy.Helper;
 using AppQuanLy.Entities;
 using FastMember;
 using AppQuanLy.DAO;
+using System.IO;
+using CKEditorBrowserControls;
+using DevExpress.XtraBars.Navigation;
 
 namespace AppQuanLy.GUI
 {
@@ -22,6 +25,13 @@ namespace AppQuanLy.GUI
           private List<BookCategory> bookcate;
           private List<Publisher> pub;
           private List<Publisher> pub2;
+
+          static String curDir = Directory.GetCurrentDirectory().Replace("\\bin\\Debug","");
+          static Uri ckEditorUri = new Uri(String.Format("file:///{0}/Resources/Ckeditor/index.html", curDir));
+          CKEditorControl ckEditorCtrl = new CKEditorControl(ckEditorUri)
+          {
+               Dock = DockStyle.Fill
+          };
           public BooksUC()
           {
                db = new AppQuanLyDbContext();
@@ -42,6 +52,7 @@ namespace AppQuanLy.GUI
                cmbboxRealeased.DataSource = pub2;
                EstablishBtn(true);
                EstablishInputBox(true);
+               tabPg.Controls.Add(ckEditorCtrl);
           }
           public void EstablishBtn(bool flag)
           {
@@ -58,7 +69,6 @@ namespace AppQuanLy.GUI
                txtbWeight.Enabled = flag;
                txtboxName.Enabled = flag;
                txtbNumberPage.Enabled = flag;
-               txtbDescription.Enabled = flag;
                cmbboxAuthor.Enabled = flag;
                cmbboxCategory.Enabled = flag;
                cmbboxPublisher.Enabled = flag;
@@ -72,7 +82,6 @@ namespace AppQuanLy.GUI
                txtbWeight.Text = null;
                txtboxName.Text = null;
                txtbNumberPage.Text = null;
-               txtbDescription.Text = null;
                cmbboxAuthor.Text = null;
                cmbboxCategory.Text = null;
                cmbboxPublisher.Text = null;
@@ -87,11 +96,12 @@ namespace AppQuanLy.GUI
                txtbWeight.Text = row.Weight.ToString();
                txtboxName.Text = row.Name;
                txtbNumberPage.Text = row.NumberPage.ToString();
-               txtbDescription.Text = row.Description;
                cmbboxAuthor.SelectedValue = row.AuthorID;
                cmbboxCategory.SelectedValue = row.CategoryID;
                cmbboxPublisher.SelectedValue = row.PublisherID;
                cmbboxRealeased.SelectedValue = row.ReleasedID;
+               txtbImage.Text = row.Image;
+               pckbxImg.ImageLocation = "http://localhost:10744" + row.Image.Replace("\\","/");
                //cmbboxAuthor.SelectedText = row.Author;
                //cmbboxCategory.SelectedText = row.Category;
                //cmbboxPublisher.SelectedText = row.Publisher;
@@ -110,6 +120,17 @@ namespace AppQuanLy.GUI
           {
                var bk = new BookViewModel();
                JSONHelper.SendPostRequest<BookViewModel>("book",bk);
+          }
+
+          private void label8_Click(object sender, EventArgs e)
+          {
+
+          }
+
+          private void button1_Click(object sender, EventArgs e)
+          {
+               var listImgWF = new ListImageWF();
+               listImgWF.Show();
           }
      }
 }

@@ -39,6 +39,7 @@ namespace AppQuanLy
                aUC.Dock = DockStyle.Fill;
                layctrlHome.Controls.Clear();
                layctrlHome.Controls.Add(aUC);
+               var x = aUC.Controls;
           }
 
      }

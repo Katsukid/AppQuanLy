@@ -4,3 +4,9 @@ C:\Users\tang duong\Desktop\Lap trinh tich hop\WinForms-CKEditorControl-master\W
 C:\Users\tang duong\Desktop\Lap trinh tich hop\WinForms-CKEditorControl-master\WinForms-CKEditorControl-master\CKEditorControl\obj\Debug\CKEditorBrowserControls.csproj.CoreCompileInputs.cache
 C:\Users\tang duong\Desktop\Lap trinh tich hop\WinForms-CKEditorControl-master\WinForms-CKEditorControl-master\CKEditorControl\obj\Debug\CKEditorBrowserControls.dll
 C:\Users\tang duong\Desktop\Lap trinh tich hop\WinForms-CKEditorControl-master\WinForms-CKEditorControl-master\CKEditorControl\obj\Debug\CKEditorBrowserControls.pdb
+D:\Visual Studio\Source\AppQuanLy\CKEditorControl\bin\Debug\CKEditorBrowserControls.dll
+D:\Visual Studio\Source\AppQuanLy\CKEditorControl\bin\Debug\CKEditorBrowserControls.pdb
+D:\Visual Studio\Source\AppQuanLy\CKEditorControl\obj\Debug\CKEditorBrowserControls.csprojAssemblyReference.cache
+D:\Visual Studio\Source\AppQuanLy\CKEditorControl\obj\Debug\CKEditorBrowserControls.csproj.CoreCompileInputs.cache
+D:\Visual Studio\Source\AppQuanLy\CKEditorControl\obj\Debug\CKEditorBrowserControls.dll
+D:\Visual Studio\Source\AppQuanLy\CKEditorControl\obj\Debug\CKEditorBrowserControls.pdb

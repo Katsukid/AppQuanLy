@@ -6,7 +6,7 @@ namespace AppQuanLy.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Author
+    public  class Author
     {
         public int ID { get; set; }
 

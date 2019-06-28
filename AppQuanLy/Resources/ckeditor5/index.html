@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="ckeditor.js"></script>
+</head>
+<body>
+	<div id="editor"></div>
+	
+	<script>
+		function getContent(){
+        return CKEDITOR.instances.editor.getData();
+    }
+
+    function setContent(content) {
+        CKEDITOR.instances.editor.setData(content);
+    }
+	</script>
+
+</body>
+</html>
